@@ -14,6 +14,14 @@
 		89D009301E1AD716007E0627 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D0092E1E1AD716007E0627 /* LaunchScreen.storyboard */; };
 		89D0093B1E1AD716007E0627 /* DevChat2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0093A1E1AD716007E0627 /* DevChat2Tests.swift */; };
 		89D009461E1AD716007E0627 /* DevChat2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009451E1AD716007E0627 /* DevChat2UITests.swift */; };
+		89D009571E1AD75B007E0627 /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009561E1AD75B007E0627 /* CameraVCDelegate.swift */; };
+		89D009591E1AD76E007E0627 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009581E1AD76E007E0627 /* CameraVC.swift */; };
+		89D0095B1E1AD782007E0627 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0095A1E1AD782007E0627 /* CameraViewController.swift */; };
+		89D0095D1E1AD7A0007E0627 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0095C1E1AD7A0007E0627 /* PreviewView.swift */; };
+		89D0095F1E1AD7AF007E0627 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0095E1E1AD7AF007E0627 /* RoundTextField.swift */; };
+		89D009611E1AD86A007E0627 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009601E1AD86A007E0627 /* PhotoCaptureDelegate.swift */; };
+		89D009631E1AE488007E0627 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89D009621E1AE488007E0627 /* GoogleService-Info.plist */; };
+		89D009651E1AE5D7007E0627 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009641E1AE5D7007E0627 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		89D009411E1AD716007E0627 /* DevChat2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DevChat2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D009451E1AD716007E0627 /* DevChat2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevChat2UITests.swift; sourceTree = "<group>"; };
 		89D009471E1AD716007E0627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D009561E1AD75B007E0627 /* CameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
+		89D009581E1AD76E007E0627 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		89D0095A1E1AD782007E0627 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		89D0095C1E1AD7A0007E0627 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		89D0095E1E1AD7AF007E0627 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		89D009601E1AD86A007E0627 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCaptureDelegate.swift; path = ../../DevChat/DevChat/PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		89D009621E1AE488007E0627 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89D009641E1AE5D7007E0627 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +113,16 @@
 		89D009241E1AD716007E0627 /* DevChat2 */ = {
 			isa = PBXGroup;
 			children = (
+				89D009551E1AD73A007E0627 /* View */,
+				89D009541E1AD732007E0627 /* Controller */,
+				89D009531E1AD72B007E0627 /* Protocols */,
 				89D009251E1AD716007E0627 /* AppDelegate.swift */,
+				89D009601E1AD86A007E0627 /* PhotoCaptureDelegate.swift */,
 				89D009271E1AD716007E0627 /* ViewController.swift */,
 				89D009291E1AD716007E0627 /* Main.storyboard */,
 				89D0092C1E1AD716007E0627 /* Assets.xcassets */,
 				89D0092E1E1AD716007E0627 /* LaunchScreen.storyboard */,
+				89D009621E1AE488007E0627 /* GoogleService-Info.plist */,
 				89D009311E1AD716007E0627 /* Info.plist */,
 			);
 			path = DevChat2;
@@ -123,6 +144,33 @@
 				89D009471E1AD716007E0627 /* Info.plist */,
 			);
 			path = DevChat2UITests;
+			sourceTree = "<group>";
+		};
+		89D009531E1AD72B007E0627 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				89D009561E1AD75B007E0627 /* CameraVCDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		89D009541E1AD732007E0627 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89D009581E1AD76E007E0627 /* CameraVC.swift */,
+				89D0095A1E1AD782007E0627 /* CameraViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		89D009551E1AD73A007E0627 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89D0095C1E1AD7A0007E0627 /* PreviewView.swift */,
+				89D0095E1E1AD7AF007E0627 /* RoundTextField.swift */,
+				89D009641E1AE5D7007E0627 /* RoundedButton.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +241,7 @@
 				TargetAttributes = {
 					89D009211E1AD716007E0627 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4G772GYV39;
 						ProvisioningStyle = Automatic;
 					};
 					89D009351E1AD716007E0627 = {
@@ -233,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D009301E1AD716007E0627 /* LaunchScreen.storyboard in Resources */,
+				89D009631E1AE488007E0627 /* GoogleService-Info.plist in Resources */,
 				89D0092D1E1AD716007E0627 /* Assets.xcassets in Resources */,
 				89D0092B1E1AD716007E0627 /* Main.storyboard in Resources */,
 			);
@@ -260,7 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D009281E1AD716007E0627 /* ViewController.swift in Sources */,
+				89D0095B1E1AD782007E0627 /* CameraViewController.swift in Sources */,
+				89D009571E1AD75B007E0627 /* CameraVCDelegate.swift in Sources */,
+				89D0095F1E1AD7AF007E0627 /* RoundTextField.swift in Sources */,
+				89D009651E1AE5D7007E0627 /* RoundedButton.swift in Sources */,
 				89D009261E1AD716007E0627 /* AppDelegate.swift in Sources */,
+				89D009591E1AD76E007E0627 /* CameraVC.swift in Sources */,
+				89D009611E1AD86A007E0627 /* PhotoCaptureDelegate.swift in Sources */,
+				89D0095D1E1AD7A0007E0627 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4G772GYV39;
 				INFOPLIST_FILE = DevChat2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.witherberry.DevChat2;
@@ -424,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4G772GYV39;
 				INFOPLIST_FILE = DevChat2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.witherberry.DevChat2;

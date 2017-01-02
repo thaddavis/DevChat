@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CameraVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraVC" customModule="DevChat2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,207 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rr-qM-pbY" customClass="PreviewView" customModule="DevChat2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x19-lA-MIr">
+                                <rect key="frame" x="127" y="553" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="bSz-f7-Ige"/>
+                                    <constraint firstAttribute="height" constant="28" id="tOc-y2-Rq2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Photo"/>
+                                    <segment title="Movie"/>
+                                </segments>
+                                <connections>
+                                    <action selector="captureModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fhh-ew-osV"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYc-ub-xjE" userLabel="CameraButton">
+                                <rect key="frame" x="153" y="589" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="SuV-MN-xDF"/>
+                                    <constraint firstAttribute="width" constant="70" id="vSm-al-Ysg"/>
+                                </constraints>
+                                <state key="normal" image="createsnap_btn"/>
+                                <connections>
+                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fC-sf-drf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlq-da-ptY" userLabel="RecordButton">
+                                <rect key="frame" x="281" y="55" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="o6c-Xx-xGh"/>
+                                    <constraint firstAttribute="height" constant="70" id="x5o-yt-qJi"/>
+                                </constraints>
+                                <state key="normal" image="camera_icon_snap"/>
+                                <connections>
+                                    <action selector="changeCameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YHN-El-71f"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mlq-da-ptY" secondAttribute="trailing" constant="8" id="1ty-fv-BP8"/>
+                            <constraint firstItem="x19-lA-MIr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DeH-kn-2AV"/>
+                            <constraint firstItem="bYc-ub-xjE" firstAttribute="top" secondItem="x19-lA-MIr" secondAttribute="bottom" constant="8" id="N2p-Nc-uAS"/>
+                            <constraint firstItem="Mlq-da-ptY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="QTr-d8-2VW"/>
+                            <constraint firstItem="1Rr-qM-pbY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qmr-xL-s5F"/>
+                            <constraint firstItem="1Rr-qM-pbY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V6h-zX-Ztp"/>
+                            <constraint firstAttribute="trailing" secondItem="1Rr-qM-pbY" secondAttribute="trailing" id="eD6-yf-3pl"/>
+                            <constraint firstItem="bYc-ub-xjE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="grr-yD-Vcv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Rr-qM-pbY" secondAttribute="bottom" id="u11-nG-St4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bYc-ub-xjE" secondAttribute="bottom" constant="8" id="vj0-k8-j2N"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Mlq-da-ptY" id="bUl-9l-sLJ"/>
+                        <outlet property="captureModeControl" destination="x19-lA-MIr" id="fOZ-h4-YS2"/>
+                        <outlet property="previewView" destination="1Rr-qM-pbY" id="RxF-Vv-1NM"/>
+                        <outlet property="recordButton" destination="bYc-ub-xjE" id="xKo-Oh-sbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IYN-LM-v4L">
+            <objects>
+                <viewController id="0sh-B6-ooF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RQR-RV-NIJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ub4-tJ-XqW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uXv-cc-kpF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes" translatesAutoresizingMaskIntoConstraints="NO" id="1qe-6U-zYv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kos-Wp-cMP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27450980392156865" green="0.59215686274509804" blue="0.011764705882352941" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ2-IO-uYm" customClass="RoundedButton" customModule="DevChat2" customModuleProvider="target">
+                                <rect key="frame" x="58" y="340" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="2C4-QI-7v1"/>
+                                    <constraint firstAttribute="height" constant="40" id="lqM-3i-bmi"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.80481035738799056" green="1" blue="0.77873979913358504" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71b-IJ-xlP" customClass="RoundTextField" customModule="DevChat2" customModuleProvider="target">
+                                <rect key="frame" x="58" y="228" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="6c1-Vm-vvM"/>
+                                    <constraint firstAttribute="height" constant="40" id="FUw-Jg-5Li"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.99998784065246582" blue="0.9999920129776001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-wS-4TI" userLabel="Enter Password" customClass="RoundTextField" customModule="DevChat2" customModuleProvider="target">
+                                <rect key="frame" x="57" y="284" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="58y-zi-ktZ"/>
+                                    <constraint firstAttribute="width" constant="260" id="g1F-k9-EDK"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.99998784070000002" blue="0.99999201299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="1" green="0.99998784070000002" blue="0.99999201299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.99998784070000002" blue="0.99999201299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="okS-Y9-Rhg">
+                                <rect key="frame" x="35.5" y="60" width="304.5" height="104"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-mountains-white" translatesAutoresizingMaskIntoConstraints="NO" id="6eR-4h-W6F">
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="104" id="2Qz-ek-12A"/>
+                                            <constraint firstAttribute="width" constant="186" id="pzn-VC-VN5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJb-V3-Z6Z">
+                                        <rect key="frame" x="186" y="31.5" width="118.5" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" red="0.99995160102844238" green="0.99599575996398926" blue="0.99999284744262695" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="okS-Y9-Rhg" firstAttribute="top" secondItem="RQR-RV-NIJ" secondAttribute="bottom" constant="40" id="1kG-86-WdS"/>
+                            <constraint firstItem="okS-Y9-Rhg" firstAttribute="centerX" secondItem="uXv-cc-kpF" secondAttribute="centerX" id="LhF-Xl-MK8"/>
+                            <constraint firstItem="1qe-6U-zYv" firstAttribute="top" secondItem="uXv-cc-kpF" secondAttribute="top" id="Mnu-NS-IXr"/>
+                            <constraint firstItem="ub4-tJ-XqW" firstAttribute="top" secondItem="1qe-6U-zYv" secondAttribute="bottom" id="Yu3-uo-qmW"/>
+                            <constraint firstItem="71b-IJ-xlP" firstAttribute="top" secondItem="okS-Y9-Rhg" secondAttribute="bottom" constant="64" id="dzX-ku-g8h"/>
+                            <constraint firstItem="fYz-wS-4TI" firstAttribute="centerX" secondItem="uXv-cc-kpF" secondAttribute="centerX" id="eK8-9x-7Br"/>
+                            <constraint firstItem="1qe-6U-zYv" firstAttribute="leading" secondItem="uXv-cc-kpF" secondAttribute="leading" id="erO-4d-Tut"/>
+                            <constraint firstItem="cJ2-IO-uYm" firstAttribute="top" secondItem="fYz-wS-4TI" secondAttribute="bottom" constant="16" id="fs5-1V-bDq"/>
+                            <constraint firstAttribute="trailing" secondItem="1qe-6U-zYv" secondAttribute="trailing" id="nnd-WW-9zT"/>
+                            <constraint firstItem="fYz-wS-4TI" firstAttribute="top" secondItem="71b-IJ-xlP" secondAttribute="bottom" constant="16" id="phR-MC-E65"/>
+                            <constraint firstItem="71b-IJ-xlP" firstAttribute="centerX" secondItem="uXv-cc-kpF" secondAttribute="centerX" id="ptK-W5-mJG"/>
+                            <constraint firstItem="cJ2-IO-uYm" firstAttribute="centerX" secondItem="uXv-cc-kpF" secondAttribute="centerX" id="roY-NC-iSg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A58-gi-Bs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="createsnap_btn" width="30" height="30"/>
+        <image name="devslopes" width="1080" height="1349"/>
+        <image name="devslopes-mountains-white" width="451" height="335"/>
+    </resources>
 </document>
