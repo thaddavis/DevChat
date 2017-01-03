@@ -27,6 +27,9 @@
 		89D009671E1AFA40007E0627 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009661E1AFA40007E0627 /* LoginVC.swift */; };
 		89D0096A1E1B06CE007E0627 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009691E1B06CE007E0627 /* AuthService.swift */; };
 		89D0096C1E1B4342007E0627 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0096B1E1B4342007E0627 /* DataService.swift */; };
+		89D0096E1E1B4AE1007E0627 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0096D1E1B4AE1007E0627 /* UsersVC.swift */; };
+		89D009701E1B4C69007E0627 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D0096F1E1B4C69007E0627 /* UserCell.swift */; };
+		89D009731E1B5332007E0627 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D009721E1B5332007E0627 /* User.swift */; };
 		E6E4BE261A3A30C29083FA6E /* Pods_DevChat2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105EC45E153050280CB0D37E /* Pods_DevChat2UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		89D009661E1AFA40007E0627 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		89D009691E1B06CE007E0627 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		89D0096B1E1B4342007E0627 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		89D0096D1E1B4AE1007E0627 /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		89D0096F1E1B4C69007E0627 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		89D009721E1B5332007E0627 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		957A120828A61F3060D06C13 /* Pods-DevChat2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat2.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat2/Pods-DevChat2.release.xcconfig"; sourceTree = "<group>"; };
 		9AF34EF0934264C4E7755645 /* Pods-DevChat2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevChat2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevChat2/Pods-DevChat2.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B0C358733775622C676E7E /* Pods_DevChat2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +155,7 @@
 		89D009241E1AD716007E0627 /* DevChat2 */ = {
 			isa = PBXGroup;
 			children = (
+				89D009711E1B5317007E0627 /* Model */,
 				89D009681E1B0694007E0627 /* Services */,
 				89D009551E1AD73A007E0627 /* View */,
 				89D009541E1AD732007E0627 /* Controller */,
@@ -197,6 +204,7 @@
 				89D009581E1AD76E007E0627 /* CameraVC.swift */,
 				89D0095A1E1AD782007E0627 /* CameraViewController.swift */,
 				89D009661E1AFA40007E0627 /* LoginVC.swift */,
+				89D0096D1E1B4AE1007E0627 /* UsersVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				89D0095C1E1AD7A0007E0627 /* PreviewView.swift */,
 				89D0095E1E1AD7AF007E0627 /* RoundTextField.swift */,
 				89D009641E1AE5D7007E0627 /* RoundedButton.swift */,
+				89D0096F1E1B4C69007E0627 /* UserCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -218,6 +227,14 @@
 				89D0096B1E1B4342007E0627 /* DataService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		89D009711E1B5317007E0627 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89D009721E1B5332007E0627 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A072AE29D34C19A83BB93B92 /* Frameworks */ = {
@@ -517,11 +534,14 @@
 				89D0095B1E1AD782007E0627 /* CameraViewController.swift in Sources */,
 				89D009571E1AD75B007E0627 /* CameraVCDelegate.swift in Sources */,
 				89D0096C1E1B4342007E0627 /* DataService.swift in Sources */,
+				89D009701E1B4C69007E0627 /* UserCell.swift in Sources */,
 				89D0095F1E1AD7AF007E0627 /* RoundTextField.swift in Sources */,
 				89D009671E1AFA40007E0627 /* LoginVC.swift in Sources */,
 				89D0096A1E1B06CE007E0627 /* AuthService.swift in Sources */,
+				89D009731E1B5332007E0627 /* User.swift in Sources */,
 				89D009651E1AE5D7007E0627 /* RoundedButton.swift in Sources */,
 				89D009261E1AD716007E0627 /* AppDelegate.swift in Sources */,
+				89D0096E1E1B4AE1007E0627 /* UsersVC.swift in Sources */,
 				89D009591E1AD76E007E0627 /* CameraVC.swift in Sources */,
 				89D009611E1AD86A007E0627 /* PhotoCaptureDelegate.swift in Sources */,
 				89D0095D1E1AD7A0007E0627 /* PreviewView.swift in Sources */,
