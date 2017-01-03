@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CameraVC: CameraViewController, CameraVCDelegate {
     
@@ -27,11 +28,14 @@ class CameraVC: CameraViewController, CameraVCDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+
+        performSegue(withIdentifier: "LoginVC", sender: nil)
+//        guard FIRAuth.auth()?.currentUser != nil else {
+//            performSegue(withIdentifier: "LoginVC", sender: nil)
+//            return
+//        }
     }
-    
     
     // implement CameraVCDelegate
     func canStartRecording() {
